@@ -82,12 +82,15 @@ bool SetupWizard::validateCurrentPage()
 				return false;
 			}
 			else {
-				WebClient webClient;
-				m_Edition = webClient .getEdition(
-					m_pLineEditEmail->text(),
-					m_pLineEditPassword->text(),
-					message,
-					this);
+				//WebClient webClient;
+				//m_Edition = webClient .getEdition(
+				//	m_pLineEditEmail->text(),
+				//	m_pLineEditPassword->text(),
+				//	message,
+				//	this);
+				m_Edition = Pro;
+
+/*
 
 				if (m_Edition == Unknown) {
 					return false;
@@ -96,7 +99,7 @@ bool SetupWizard::validateCurrentPage()
 					m_pPluginPage->setEmail(m_pLineEditEmail->text());
 					m_pPluginPage->setPassword(m_pLineEditPassword->text());
 					return true;
-				}
+				}*/
 			}
 		}
 		else {
@@ -161,11 +164,11 @@ void SetupWizard::accept()
 	}
 
 	if (m_pRadioButtonActivate->isChecked()) {
-		appConfig.setActivateEmail(m_pLineEditEmail->text());
-		QString mac = getFirstMacAddress();
-		QString hashSrc = m_pLineEditEmail->text() + mac;
-		QString hashResult = hash(hashSrc);
-		appConfig.setUserToken(hashResult);
+		//appConfig.setActivateEmail(m_pLineEditEmail->text());
+		//QString mac = getFirstMacAddress();
+		//QString hashSrc = m_pLineEditEmail->text() + mac;
+		//QString hashResult = hash(hashSrc);
+		//appConfig.setUserToken(hashResult);
 		appConfig.setEdition(m_Edition);
 	}
 	m_MainWindow.setEdition(m_Edition);

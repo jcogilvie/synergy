@@ -1169,15 +1169,15 @@ void MainWindow::promptAutoConfig()
 
 void MainWindow::updateEdition()
 {
-	QString mac = getFirstMacAddress();
-	QString hashSrc = m_AppConfig.activateEmail() + mac;
-	QString hashResult = hash(hashSrc);
-	if (hashResult == m_AppConfig.userToken()) {
+	//QString mac = getFirstMacAddress();
+	//QString hashSrc = m_AppConfig.activateEmail() + mac;
+	//QString hashResult = hash(hashSrc);
+	//if (hashResult == m_AppConfig.userToken()) {
 		setEdition(m_AppConfig.edition());
-	}
-	else {
-		setEdition(Unknown);
-	}
+	//}
+	//else {
+	//	setEdition(Unknown);
+	//}
 }
 
 void MainWindow::on_m_pComboServerList_currentIndexChanged(QString )
